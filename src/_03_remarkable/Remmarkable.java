@@ -4,13 +4,13 @@ import javax.swing.JOptionPane;
 
 public class Remmarkable {
 public static void main(String[] args) {
-	String mattFact= "catches fish";
-	String baniFact= "plays soccer";
+	String mattFact= " You like to catch fish";
+	String baniFact= " You like to play soccer";
 	String name=JOptionPane.showInputDialog("What is your name?");
-	if(mattFact.equals("matt")) {
-		JOptionPane.showMessageDialog(null, "You like to catch fish");
+	if(name.equals("matt")) {
+		JOptionPane.showMessageDialog(null, mattFact);
 	}
-	if(baniFact.equals("bani")) {
-	JOptionPane.showMessageDialog(null, "You like to play soccer");
+	if(name.equals("bani")) {
+	JOptionPane.showMessageDialog(null, baniFact);
 }
 }}
