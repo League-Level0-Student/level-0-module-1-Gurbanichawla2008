@@ -15,19 +15,18 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class RobotInSpace implements KeyEventDispatcher {
 
-	Robot rob = new Robot("mini");
+	Robot rob = new Robot("bani");
 
 	/*
 	 * Make the Robot move around the screen when the arrow keys are pressed...
-	 * 
 	 * 1. IMPORTANT: For this recipe, use rob.microMove(distance) to move your
 	 * Robot and rob.setAngle(angle) to change the direction of your Robot. //Do
 	 * not add code here - go to step 2
 	 */
-
 	private void moveRobot(int keyPressed) throws InterruptedException {
 		// 2. Print out the keyPressed variable and write down the numbers for
 		// each arrow key
+		System.out.println(keyPressed);
 
 		// 3. If the up arrow is pressed, move the Robot up the screen.
 
