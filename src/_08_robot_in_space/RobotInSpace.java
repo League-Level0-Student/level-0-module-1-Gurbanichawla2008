@@ -1,7 +1,6 @@
 //    Copyright (c) The League of Amazing Programmers 2013-2019
 //    Level 0
 
-
 package _08_robot_in_space;
 
 import java.applet.AudioClip;
@@ -15,13 +14,13 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class RobotInSpace implements KeyEventDispatcher {
 
-	Robot rob = new Robot("bani");
+	Robot bani = new Robot("bani");
 
 	/*
-	 * Make the Robot move around the screen when the arrow keys are pressed...
-	 * 1. IMPORTANT: For this recipe, use rob.microMove(distance) to move your
-	 * Robot and rob.setAngle(angle) to change the direction of your Robot. //Do
-	 * not add code here - go to step 2
+	 * Make the Robot move around the screen when the arrow keys are pressed... 1.
+	 * IMPORTANT: For this recipe, use rob.microMove(distance) to move your Robot
+	 * and rob.setAngle(angle) to change the direction of your Robot. //Do not add
+	 * code here - go to step 2
 	 */
 	private void moveRobot(int keyPressed) throws InterruptedException {
 		// 2. Print out the keyPressed variable and write down the numbers for
@@ -29,19 +28,38 @@ public class RobotInSpace implements KeyEventDispatcher {
 		System.out.println(keyPressed);
 
 		// 3. If the up arrow is pressed, move the Robot up the screen.
+		if (keyPressed == 38) {
 
+			bani.setAngle(0);
+			bani.microMove(1);
+
+		}
 		// 4. If the down arrow is pressed, move the Robot down.
+		if (keyPressed == 40) {
+			bani.setAngle(180);
+			bani.microMove(1);
+		}
 
 		// 5. If the left arrow is pressed, make the Robot go left.
+		if (keyPressed == 39) {
+
+			bani.setAngle(90);
+			bani.microMove(1);
+
+		}
 
 		// 6. If right is pressed, move the Robot right.
+		if (keyPressed == 37) {
+			bani.setAngle(-90);
+			bani.microMove(1);
 
-		// 7. Run your program and move the Robot to RD-2D for a surprise!
+		}
 	}
+	// 7. Run your program and move the Robot to RD-2D for a surprise!
 
 	private void checkIfR2D2Found() throws Exception {
-		int robotLocationX = rob.getX();
-		int robotLocationY = rob.getY();
+		int robotLocationX = bani.getX();
+		int robotLocationY = bani.getY();
 
 		if (robotLocationX <= 7300 && robotLocationX >= 720 && robotLocationY >= 150 && robotLocationY <= 160)
 			playEureka();
@@ -54,8 +72,9 @@ public class RobotInSpace implements KeyEventDispatcher {
 	private void controlTheRobot() {
 		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
 		Robot.setWindowImage("planet.jpg");
-		rob.penUp();
-		rob.setSpeed(10);
+		bani.setRandomPenColor();
+		bani.penDown();
+		bani.setSpeed(20);
 	}
 
 	public boolean dispatchKeyEvent(KeyEvent e) {
