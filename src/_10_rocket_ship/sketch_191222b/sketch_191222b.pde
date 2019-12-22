@@ -2,14 +2,14 @@ int x = 400;
 int y = 600; 
 
 void setup() {
-
-     size(800, 800);
+size(800, 800);
+ 
 
 }
 
 void draw() {
-  y=y-5;
-background(0, 0, 40);
+y=y-5;
+   background(0, 0, 40); 
     fill(random(255), 0, 0);
     ellipse(x, y + 130, 90, 90);
     fill(248, 128, 0);

@@ -6,7 +6,11 @@ image(face, 0, 0);
  }
  
    void draw(){
-     ellipse(280,380,80,40); 
      
-     
+     fill(mouseX,mouseY,mouseY);
+     ellipse(280,380,120,110);
+     ellipse(590,380,120,110);
+     fill(0,0,0);
+    ellipse(280,380,40,30);
+     ellipse(590,380,40,30);
    }
